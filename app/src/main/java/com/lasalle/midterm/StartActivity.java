@@ -65,15 +65,17 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
+        Client data;
         switch (v.getId()){
             case R.id.buttonSave:
                 findTransportType();
-                clients.add(new Client(Integer.parseInt(editTextClientNumber.getText().toString()),
-                                       transportType,
-                                       Integer.parseInt(editTextKm.getText().toString())));
+                data = new Client(Integer.parseInt(editTextClientNumber.getText().toString()),
+                        transportType,
+                        Integer.parseInt(editTextKm.getText().toString()));
+                clients.add(data);
 
                 Snackbar mysnackbar = Snackbar
-                        .make(v,editTextClientNumber.getText().toString() + transportType + editTextKm.getText().toString(), Snackbar.LENGTH_LONG);
+                        .make(v,data.toString(), Snackbar.LENGTH_LONG);
 
                 mysnackbar.show();
                 break;

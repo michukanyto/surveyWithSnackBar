@@ -60,20 +60,20 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
             transportType = clients.get(i).getTrans_type();
             switch (transportType){
                 case 1:
-                    totalBusMetro += clients.get(i).getCl_number();
+                    totalBusMetro ++;
                     kmBusMetro += clients.get(i).getNb_km();
                     break;
                 case 2:
-                    totalBusMetro += clients.get(i).getCl_number();
+                    totalBusMetro ++;
                     kmBusMetro += clients.get(i).getNb_km();
                     break;
                 case 3:
                     totalPrivateTaxi += clients.get(i).getCl_number();
-                    kmPrivateTaxi += clients.get(i).getNb_km();
+                    kmPrivateTaxi ++;
                     break;
                 case 4:
                     totalPrivateTaxi += clients.get(i).getCl_number();
-                    kmPrivateTaxi += clients.get(i).getNb_km();
+                    kmPrivateTaxi ++;
                     break;
                 default:
                     break;
