@@ -17,41 +17,36 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <TextView
         android:id="@+id/textViewClientNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="47dp"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="16dp"
         android:text="Client Number :"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/editTextClientNumber"
-        app:layout_constraintHorizontal_bias="0.312"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
 
     <TextView
         android:id="@+id/textViewTypeOfTransport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
         android:layout_marginTop="60dp"
-        android:layout_marginEnd="50dp"
         android:text="Type of Transport :"
-        app:layout_constraintEnd_toStartOf="@+id/radioGroupButtonTransport"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewClientNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewClientNumber"
+        tools:layout_editor_absoluteX="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="40sp"/>
 
     <EditText
         android:id="@+id/editTextClientNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="272dp"
+        android:layout_marginEnd="296dp"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,7 +60,8 @@
         android:layout_marginEnd="163dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextClientNumber">
+        app:layout_constraintTop_toBottomOf="@+id/editTextClientNumber"
+        android:layout_marginLeft="10sp">
 
         <RadioButton
             android:id="@+id/radioButtonBus"
@@ -100,14 +96,12 @@
         android:id="@+id/textViewKm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="30dp"
-        android:text="Nombre of km per day :"
-        app:layout_constraintEnd_toStartOf="@+id/editTextKm"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTypeOfTransport" />
+        android:text="Number of km per day :"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTypeOfTransport"
+        tools:layout_editor_absoluteX="53dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="40sp"/>
 
     <EditText
         android:id="@+id/editTextKm"
@@ -118,55 +112,45 @@
         android:ems="10"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroupButtonTransport" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupButtonTransport"
+        android:layout_marginLeft="30sp"/>
 
     <Button
         android:id="@+id/buttonSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
         android:text="Save"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="302dp"
-        app:layout_constraintTop_toBottomOf="@+id/textViewKm"
-        android:layout_marginTop="20sp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="30sp"/>
+        app:layout_constraintTop_toBottomOf="@+id/textViewKm" />
 
     <Button
         android:id="@+id/buttonNew"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="New"
-        tools:layout_editor_absoluteX="123dp"
-        tools:layout_editor_absoluteY="302dp"
-        app:layout_constraintTop_toBottomOf="@+id/textViewKm"
-        android:layout_marginTop="20sp"
         app:layout_constraintLeft_toRightOf="@+id/buttonSave"
-        android:layout_marginLeft="5sp"/>
+        app:layout_constraintTop_toBottomOf="@+id/textViewKm" />
 
     <Button
         android:id="@+id/buttonEnd"
         android:layout_width="87dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="End"
-        tools:layout_editor_absoluteX="220dp"
-        tools:layout_editor_absoluteY="303dp"
-        app:layout_constraintTop_toBottomOf="@+id/textViewKm"
-        android:layout_marginTop="20sp"
         app:layout_constraintLeft_toRightOf="@+id/buttonNew"
-        android:layout_marginLeft="5sp"/>
+        app:layout_constraintTop_toBottomOf="@+id/textViewKm" />
 
     <TextView
         android:id="@+id/textViewPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
         android:text="Admin Password :"
-        tools:layout_editor_absoluteX="342dp"
-        tools:layout_editor_absoluteY="315dp"
-        app:layout_constraintTop_toBottomOf="@+id/textViewKm"
-        android:layout_marginTop="30sp"
         app:layout_constraintLeft_toRightOf="@+id/buttonEnd"
-        android:layout_marginLeft="5sp"/>
+        app:layout_constraintTop_toBottomOf="@+id/textViewKm" />
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -197,17 +181,14 @@
         android:id="@+id/buttonLoad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
 
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:text="Load"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewPassword"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewPassword" />
 
 </android.support.constraint.ConstraintLayout>
