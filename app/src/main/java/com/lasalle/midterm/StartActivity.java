@@ -73,7 +73,7 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
                                        Integer.parseInt(editTextKm.getText().toString())));
 
                 Snackbar mysnackbar = Snackbar
-                        .make(coordinatorLayout,editTextClientNumber.getText().toString() + transportType + editTextKm.getText().toString(), Snackbar.LENGTH_LONG);
+                        .make(v,editTextClientNumber.getText().toString() + transportType + editTextKm.getText().toString(), Snackbar.LENGTH_LONG);
 
                 mysnackbar.show();
                 break;
