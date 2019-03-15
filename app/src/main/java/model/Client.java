@@ -45,9 +45,9 @@ public class Client implements Serializable {
     @Override
     public String toString() {
         return "Client{" +
-                "cl_number=" + cl_number +
-                ", trans_type=" + trans_type +
-                ", nb_km=" + nb_km +
+                " cl_number= " + cl_number +
+                ", trans_type= " + trans_type +
+                ", nb_km= " + nb_km +
                 '}';
     }
 }

@@ -2,6 +2,7 @@ package com.lasalle.midterm;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -47,55 +48,46 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         textViewTotalPrivateTaxi = (TextView) findViewById(R.id.textViewTotalPrivateTaxi);
         textViewPercentageBusMetro = (TextView) findViewById(R.id.textViewPercentageBusMetro);
         textViewPercentagePrivateTaxi = (TextView) findViewById(R.id.textViewPercentagePrixivateTa);
+        transportType = 0;
+        kmBusMetro = 0;
+        kmPrivateTaxi = 0;
+        totalClients = 0;
         prepareData();
         fillUpData();
     }
 
     private void prepareData() {
-        transportType = 0;
-        kmBusMetro = 0;
-        kmPrivateTaxi = 0;
-        totalClients = 0;
-        for(int i = 0; i < clients.size();i++){
+        for(int i = 0; i < clients.size(); i++){
             transportType = clients.get(i).getTrans_type();
-            switch (transportType){
-                case 1:
-                    totalBusMetro ++;
-                    kmBusMetro += clients.get(i).getNb_km();
-                    break;
-                case 2:
-                    totalBusMetro ++;
-                    kmBusMetro += clients.get(i).getNb_km();
-                    break;
-                case 3:
-                    totalPrivateTaxi += clients.get(i).getCl_number();
-                    kmPrivateTaxi ++;
-                    break;
-                case 4:
-                    totalPrivateTaxi += clients.get(i).getCl_number();
-                    kmPrivateTaxi ++;
-                    break;
-                default:
-                    break;
+            if (transportType == 1 || transportType == 2) {
+                totalBusMetro++;
+                kmBusMetro += clients.get(i).getNb_km();
+                Log.i("km bus metro : ", String.valueOf(kmBusMetro));
+            }else if(transportType == 3 || transportType == 4){
+                totalPrivateTaxi += clients.get(i).getCl_number();
+                kmPrivateTaxi ++;
             }
+            Log.i("i : ",String.valueOf(i));
         }
 
-        percentageBusMetro = totalBusMetro /kmBusMetro;
-        percentagePrivateTaxi = totalPrivateTaxi /kmPrivateTaxi;
+        if(kmBusMetro == 0){
+            kmBusMetro = 1;
+        }else if(kmPrivateTaxi == 0){
+            kmPrivateTaxi = 1;
+        }
+        percentageBusMetro = totalBusMetro / kmBusMetro;
+        percentagePrivateTaxi = totalPrivateTaxi / kmPrivateTaxi;
         totalClients = totalBusMetro + totalPrivateTaxi;
-
-
     }
+
 
     private void fillUpData() {
         textViewTotalBusMetro.setText(String.valueOf(percentageBusMetro));
         textViewTotalPrivateTaxi.setText(String.valueOf(percentagePrivateTaxi));
-        textViewPercentageBusMetro.setText(String.valueOf((totalBusMetro / totalClients) * 100));
-        textViewPercentagePrivateTaxi.setText(String.valueOf((totalPrivateTaxi / totalClients) * 100));
-
-
-
+        textViewPercentageBusMetro.setText(String.valueOf((totalBusMetro / totalClients) * 100) + " %");
+        textViewPercentagePrivateTaxi.setText(String.valueOf((totalPrivateTaxi / totalClients) * 100) + " %");
     }
+
 
     @Override
     public void onClick(View v) {
