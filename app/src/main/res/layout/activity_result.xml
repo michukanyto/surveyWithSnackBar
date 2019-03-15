@@ -31,27 +31,31 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent"
+            style="@style/table_head">
 
             <TextView
                 android:id="@+id/textViewTypeOfTransport"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Type of Transport" />
+                android:text="Type of Transport"
+                android:textColor="#ffffff" />
 
             <TextView
                 android:id="@+id/textViewBusMetro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Bus/Metro"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="#ffffff" />
 
             <TextView
                 android:id="@+id/textViewPrivateTaxi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Private/taxi"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="#ffffff" />
         </TableRow>
 
         <TableRow
@@ -61,21 +65,25 @@
 
             <TextView
                 android:id="@+id/textViewTotalClient"
+                style="@style/table_head"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TotalClient/NbKm" />
+                android:text="TotalClient/NbKm"
+                android:textColor="#ffffff" />
 
             <TextView
                 android:id="@+id/textViewTotalBusMetro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                style="@style/data_head"/>
 
             <TextView
                 android:id="@+id/textViewTotalPrivateTaxi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                style="@style/data_head"/>
         </TableRow>
 
         <TableRow
@@ -84,22 +92,26 @@
 
             <TextView
                 android:id="@+id/textViewPercentage"
+                style="@style/table_head"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:text="Percentage client" />
+                android:text="Percentage client"
+                android:textColor="#ffffff" />
 
             <TextView
                 android:id="@+id/textViewPercentageBusMetro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                style="@style/data_head"/>
 
             <TextView
                 android:id="@+id/textViewPercentagePrixivateTa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                style="@style/data_head"/>
         </TableRow>
 
     </TableLayout>
